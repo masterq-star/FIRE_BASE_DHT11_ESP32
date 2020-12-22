@@ -1,7 +1,7 @@
 #include <WiFi.h>
 #include <FirebaseESP32.h>
 #include "DHT.h"
-#define DHTPIN 4
+#define DHTPIN 4         // P
 #define DHTTYPE DHT11   // DHT 11
 #define FIREBASE_HOST "https://test4-8c9e7-default-rtdb.firebaseio.com/"
 #define FIREBASE_AUTH "BrQKjJhc16DBvEGPpqeWrwOTH6pqNwLKkgPkbzSV"
@@ -65,11 +65,6 @@ void loop()
     readDHT11();
     dht_time=millis();
     }
-    String hum = String(h) + "%";
-// json.set("/data",hum);
-//  Firebase.updateNode(firebaseData,"/humidity",json);
-//  json.set("/data",t);
-//Firebase.updateNode(firebaseData,"/temprature",json);
    json.clear();
     json.add("tem", t);
     json.add("hum", h);
